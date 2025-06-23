@@ -1,0 +1,71 @@
+{
+  "simulation": {
+    "duration_minutes": 60,
+    "devices_per_type": 5,
+    "output_directory": "simulation_data"
+  },
+  "devices": {
+    "infusion_pump": {
+      "enabled": true,
+      "count": 5,
+      "update_interval_range": [
+        1,
+        3
+      ]
+    },
+    "patient_bed": {
+      "enabled": true,
+      "count": 5,
+      "update_interval_range": [
+        2,
+        5
+      ]
+    },
+    "vital_signs": {
+      "enabled": true,
+      "count": 3,
+      "update_interval_range": [
+        0.5,
+        2
+      ]
+    }
+  },
+  "data_sinks": {
+    "console": {
+      "enabled": true,
+      "format": "detailed"
+    },
+    "file": {
+      "enabled": true,
+      "format": "json",
+      "directory": "simulation_data"
+    },
+    "database": {
+      "enabled": true,
+      "file": "simulation.db"
+    },
+    "api": {
+      "enabled": false,
+      "url": "http://localhost:8080/api",
+      "auth_token": null,
+      "batch_size": 10
+    }
+  },
+  "scenarios": {
+    "normal_operation": {
+      "description": "Normal hospital operation",
+      "alarm_probability": 0.05,
+      "device_failure_probability": 0.01
+    },
+    "high_activity": {
+      "description": "High patient activity period",
+      "alarm_probability": 0.15,
+      "device_failure_probability": 0.02
+    },
+    "emergency": {
+      "description": "Emergency situation",
+      "alarm_probability": 0.3,
+      "device_failure_probability": 0.05
+    }
+  }
+}
