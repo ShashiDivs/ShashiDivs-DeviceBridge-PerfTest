@@ -1,0 +1,10 @@
+{
+  "total_messages": 9156,
+  "messages_per_device_type": {
+    "infusion_pump": 2382,
+    "patient_bed": 1229,
+    "vital_signs": 5545
+  },
+  "start_time": "2025-06-29T12:28:37.588077",
+  "end_time": "2025-06-29T12:44:04.721449"
+}
